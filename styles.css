@@ -1,19 +1,20 @@
 :root {
-  --bg: #0a1121;
-  --bg-soft: #121d31;
-  --panel: rgba(12, 18, 31, 0.8);
-  --panel-strong: #0f172a;
-  --card: #f3f6fb;
-  --card-strong: #dfeaf7;
-  --line: rgba(255, 255, 255, 0.12);
-  --blue: #2a6bff;
-  --blue-deep: #183ea8;
-  --red: #ec3e3e;
-  --red-deep: #c61b2a;
-  --white: #f5f7ff;
-  --text: #edf4ff;
-  --muted: #b9c9e6;
-  --shadow: 0 28px 80px rgba(2, 8, 23, 0.42);
+  --bg: #09090b;
+  --bg-soft: #141619;
+  --panel: rgba(15, 16, 19, 0.8);
+  --panel-strong: #101214;
+  --card: #f3f3f1;
+  --card-strong: #dfe0dc;
+  --line: rgba(255, 255, 255, 0.08);
+  --black: #050505;
+  --charcoal: #1a1d20;
+  --charcoal-soft: #2d3035;
+  --white: #f7f7f5;
+  --ivory: #e8e8e3;
+  --silver: #c7c9c3;
+  --text: #f2f4f2;
+  --muted: #bac0bb;
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -28,9 +29,9 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(42, 107, 255, 0.28), transparent 38%),
-    radial-gradient(circle at top right, rgba(236, 62, 62, 0.18), transparent 28%),
-    linear-gradient(180deg, #07101d 0%, #0b1220 30%, #0d1728 100%);
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 30%),
+    radial-gradient(circle at top right, rgba(150, 150, 150, 0.08), transparent 24%),
+    linear-gradient(180deg, #050608 0%, #0d0f12 30%, #111417 100%);
   color: var(--text);
   font-family: "Inter", sans-serif;
 }
@@ -68,7 +69,7 @@ button {
   justify-content: space-between;
   gap: 26px;
   padding: 18px 22px;
-  background: rgba(12, 19, 32, 0.72);
+  background: rgba(12, 13, 16, 0.72);
   border: 1px solid var(--line);
   border-radius: 24px;
   backdrop-filter: blur(12px);
@@ -90,11 +91,11 @@ button {
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--red), var(--blue));
-  color: white;
+  background: linear-gradient(135deg, var(--white), var(--charcoal-soft));
+  color: var(--black);
   font-size: 1.7rem;
   font-weight: 900;
-  box-shadow: 0 12px 24px rgba(32, 50, 104, 0.5);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.44);
 }
 
 .brand-mark.small {
@@ -167,10 +168,10 @@ button {
 
 .cta-btn {
   padding: 14px 22px;
-  background: linear-gradient(135deg, var(--red), var(--blue));
-  box-shadow: 0 14px 30px rgba(62, 91, 196, 0.32);
-  color: white;
-  font-weight: 700;
+  background: linear-gradient(135deg, var(--white), var(--charcoal-soft));
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
+  color: var(--black);
+  font-weight: 800;
 }
 
 .ghost-btn:hover,
@@ -331,13 +332,13 @@ button {
 }
 
 .orb-red {
-  background: radial-gradient(circle, rgba(236, 62, 62, 0.85), rgba(236, 62, 62, 0.15) 58%, transparent 72%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.18) 50%, transparent 72%);
   left: 40px;
   top: 80px;
 }
 
 .orb-blue {
-  background: radial-gradient(circle, rgba(42, 107, 255, 0.75), rgba(42, 107, 255, 0.2) 58%, transparent 72%);
+  background: radial-gradient(circle, rgba(196, 198, 194, 0.5), rgba(196, 198, 194, 0.16) 58%, transparent 72%);
   right: 34px;
   bottom: 82px;
 }
@@ -402,7 +403,7 @@ button {
 }
 
 .product-card.featured {
-  background: linear-gradient(180deg, rgba(36, 59, 108, 0.58), rgba(9, 13, 22, 0.8));
+  background: linear-gradient(180deg, rgba(110, 113, 117, 0.26), rgba(9, 13, 22, 0.8));
 }
 
 .tag {
@@ -421,11 +422,11 @@ button {
 }
 
 .tag.hot {
-  background: rgba(236, 62, 62, 0.14);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .tag.accent {
-  background: rgba(42, 107, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .product-image {
@@ -500,7 +501,8 @@ button {
 }
 
 .size-btn.active {
-  background: linear-gradient(135deg, var(--red), var(--blue));
+  background: linear-gradient(135deg, var(--white), var(--charcoal-soft));
+  color: var(--black);
   border-color: transparent;
 }
 
@@ -512,7 +514,7 @@ button {
   align-items: center;
   padding: 32px 28px;
   border-radius: 32px;
-  background: linear-gradient(135deg, rgba(42, 107, 255, 0.18), rgba(236, 62, 62, 0.12), rgba(9, 13, 22, 0.7));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(120, 122, 124, 0.10), rgba(9, 13, 22, 0.7));
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -634,11 +636,11 @@ button {
 }
 
 .card-blue {
-  background: linear-gradient(180deg, rgba(51, 91, 196, 0.52), rgba(15, 18, 31, 0.9));
+  background: linear-gradient(180deg, rgba(63, 66, 71, 0.68), rgba(15, 18, 31, 0.9));
 }
 
 .card-red {
-  background: linear-gradient(180deg, rgba(212, 58, 58, 0.52), rgba(15, 18, 31, 0.9));
+  background: linear-gradient(180deg, rgba(88, 88, 90, 0.64), rgba(15, 18, 31, 0.9));
 }
 
 .card-white {
@@ -837,8 +839,8 @@ textarea::placeholder {
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: rgba(42, 107, 255, 0.9);
-  box-shadow: 0 0 0 3px rgba(42, 107, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
 }
 
 textarea {
@@ -855,7 +857,7 @@ textarea {
   min-height: 22px;
   margin: 0;
   font-size: 0.92rem;
-  color: #a9e7b7;
+  color: #dfe8d8;
 }
 
 .newsletter-panel {
