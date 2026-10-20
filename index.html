@@ -6,7 +6,7 @@
     <title>Strydë | Streetwear for the next move</title>
     <meta
       name="description"
-      content="Strydë delivers bold streetwear for teenagers and young adults — graphic tees, heavy hoodies, joggers and limited drops."
+      content="Strydë delivers premium streetwear for teenagers and young adults — graphic tees, heavyweight hoodies, joggers and limited drops."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,6 +38,9 @@
         <div class="nav-actions">
           <button class="ghost-btn" type="button">Search</button>
           <button class="cta-btn" type="button">Shop now</button>
+          <button class="cart-toggle" type="button" id="cartToggle" aria-label="Open shopping cart">
+            Cart <span id="cart-count">0</span>
+          </button>
         </div>
       </header>
 
@@ -106,7 +109,7 @@
         </section>
 
         <section class="product-grid" id="shop" aria-label="New products">
-          <article class="product-card featured">
+          <article class="product-card featured" data-product="Signal Tee" data-price="42">
             <span class="tag hot">Hot drop</span>
             <div class="product-image product-one"></div>
             <div class="product-body">
@@ -121,10 +124,11 @@
                 <button class="size-btn" type="button">L</button>
                 <button class="size-btn" type="button">XL</button>
               </div>
+              <button class="add-cart-btn" type="button">Add to cart</button>
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-product="Velocity Jogger" data-price="68">
             <span class="tag">New</span>
             <div class="product-image product-two"></div>
             <div class="product-body">
@@ -139,10 +143,11 @@
                 <button class="size-btn" type="button">L</button>
                 <button class="size-btn" type="button">XL</button>
               </div>
+              <button class="add-cart-btn" type="button">Add to cart</button>
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-product="Afterglow Hoodie" data-price="84">
             <span class="tag accent">Sale</span>
             <div class="product-image product-three"></div>
             <div class="product-body">
@@ -157,10 +162,11 @@
                 <button class="size-btn active" type="button">L</button>
                 <button class="size-btn" type="button">XL</button>
               </div>
+              <button class="add-cart-btn" type="button">Add to cart</button>
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-product="Rhythm Layer" data-price="56">
             <span class="tag">Drop 07</span>
             <div class="product-image product-four"></div>
             <div class="product-body">
@@ -175,6 +181,7 @@
                 <button class="size-btn" type="button">L</button>
                 <button class="size-btn" type="button">XL</button>
               </div>
+              <button class="add-cart-btn" type="button">Add to cart</button>
             </div>
           </article>
         </section>
@@ -270,7 +277,7 @@
               <div class="story-visual visual-b"></div>
               <div class="story-copy">
                 <span>Lookbook</span>
-                <h3>Blue-red tones in motion.</h3>
+                <h3>Black, white and charcoal in motion.</h3>
               </div>
             </article>
 
@@ -351,6 +358,97 @@
           </form>
           <p class="newsletter-status" aria-live="polite"></p>
         </section>
+
+        <section class="checkout-panel" id="checkout" aria-label="Checkout">
+          <div class="checkout-header">
+            <p class="mini-label">Secure checkout</p>
+            <h2>Complete your order.</h2>
+          </div>
+
+          <div class="checkout-layout">
+            <form class="checkout-form" id="checkoutForm">
+              <div class="checkout-block">
+                <h3>Delivery details</h3>
+                <div class="field-row two-up">
+                  <label>
+                    <span>First name</span>
+                    <input type="text" name="firstName" placeholder="Jordan" required />
+                  </label>
+                  <label>
+                    <span>Last name</span>
+                    <input type="text" name="lastName" placeholder="Miles" required />
+                  </label>
+                </div>
+
+                <label>
+                  <span>Email address</span>
+                  <input type="email" name="checkoutEmail" placeholder="you@example.com" required />
+                </label>
+
+                <label>
+                  <span>Address</span>
+                  <input type="text" name="address" placeholder="12 North Street" required />
+                </label>
+
+                <div class="field-row two-up">
+                  <label>
+                    <span>City</span>
+                    <input type="text" name="city" placeholder="London" required />
+                  </label>
+                  <label>
+                    <span>Postcode</span>
+                    <input type="text" name="postcode" placeholder="NW1 7BQ" required />
+                  </label>
+                </div>
+              </div>
+
+              <div class="checkout-block">
+                <h3>Payment method</h3>
+                <div class="payment-options" role="radiogroup" aria-label="Payment method options">
+                  <button class="payment-btn active" type="button" data-method="Card">Card</button>
+                  <button class="payment-btn" type="button" data-method="PayPal">PayPal</button>
+                  <button class="payment-btn" type="button" data-method="Apple Pay">Apple Pay</button>
+                </div>
+
+                <label>
+                  <span>Card number</span>
+                  <input type="text" name="cardNumber" placeholder="1234 5678 9012 3456" required />
+                </label>
+
+                <div class="field-row two-up">
+                  <label>
+                    <span>Expiry</span>
+                    <input type="text" name="expiry" placeholder="MM/YY" required />
+                  </label>
+                  <label>
+                    <span>CVC</span>
+                    <input type="text" name="cvc" placeholder="123" required />
+                  </label>
+                </div>
+              </div>
+
+              <button class="cta-btn full-width" type="submit">Pay now</button>
+              <p class="checkout-status" aria-live="polite"></p>
+            </form>
+
+            <aside class="order-summary">
+              <h3>Order summary</h3>
+              <div class="summary-items" id="summaryItems"></div>
+              <div class="summary-line total-line">
+                <span>Subtotal</span>
+                <strong id="subtotalValue">$0</strong>
+              </div>
+              <div class="summary-line">
+                <span>Shipping</span>
+                <strong id="shippingValue">$0</strong>
+              </div>
+              <div class="summary-line">
+                <span>Estimated total</span>
+                <strong id="totalValue">$0</strong>
+              </div>
+            </aside>
+          </div>
+        </section>
       </main>
 
       <footer class="site-footer">
@@ -375,6 +473,21 @@
         </div>
       </footer>
     </div>
+
+    <aside class="cart-panel" id="cartPanel" aria-hidden="true">
+      <div class="cart-header">
+        <h3>Your bag</h3>
+        <button type="button" class="close-cart" id="closeCart" aria-label="Close cart">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <strong id="cartSubtotal">$0</strong>
+        </div>
+        <button class="cta-btn full-width" id="checkoutBtn" type="button">Proceed to checkout</button>
+      </div>
+    </aside>
 
     <script src="script.js"></script>
   </body>
